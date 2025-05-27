@@ -63,6 +63,9 @@ def visualize_network(G, file, layout_type="spring"):
 
 
 for file in os.scandir("network"): # .venv in root dir
+    if '.mtx' not in file.name:
+        continue
+    
     # load the mtx file
     matrix = scipy.io.mmread(file.path)
 
